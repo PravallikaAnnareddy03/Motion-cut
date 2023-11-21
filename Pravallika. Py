@@ -1,0 +1,106 @@
+import time
+
+def introduction():
+    print("Welcome to the Text Adventure Game!")
+    time.sleep(1)
+    print("You find yourself standing in front of a mysterious cave.")
+    time.sleep(1)
+    print("Do you want to enter the cave? (yes/no)")
+
+def choose_path():
+    choice = input().lower()
+    if choice == "yes":
+        print("You cautiously enter the cave.")
+        time.sleep(1)
+        cave_path()
+    elif choice == "no":
+        print("You decide not to enter the cave and look for another path.")
+        time.sleep(1)
+        print("You see a forest on your left and a mountain on your right.")
+        time.sleep(1)
+        print("Which path do you choose? (forest/mountain)")
+        forest_or_mountain()
+    else:
+        print("Please enter 'yes' or 'no'.")
+        choose_path()
+
+def cave_path():
+    print("As you venture deeper into the cave, you encounter two tunnels.")
+    time.sleep(1)
+    print("One is dark and ominous, and the other is dimly lit.")
+    time.sleep(1)
+    print("Which tunnel do you choose? (dark/dim)")
+    tunnel_choice = input().lower()
+    if tunnel_choice == "dark":
+        print("You enter the dark tunnel.")
+        time.sleep(1)
+        print("Suddenly, you hear a growl.")
+        time.sleep(1)
+        print("A bear appears! What do you do? (fight/run)")
+        bear_encounter()
+    elif tunnel_choice == "dim":
+        print("You choose the dimly lit tunnel.")
+        time.sleep(1)
+        print("You find a treasure chest at the end of the tunnel.")
+        time.sleep(1)
+        print("Congratulations, you found the treasure!")
+    else:
+        print("Please enter 'dark' or 'dim'.")
+        cave_path()
+
+def bear_encounter():
+    choice = input().lower()
+    if choice == "fight":
+        print("You decide to fight the bear.")
+        time.sleep(1)
+        print("It's a tough battle, but you manage to defeat the bear.")
+        time.sleep(1)
+        print("You can now continue exploring the cave.")
+        cave_path()
+    elif choice == "run":
+        print("You choose to run away from the bear.")
+        time.sleep(1)
+        print("You manage to escape, but you are now lost in the cave.")
+        time.sleep(1)
+        print("You need to find your way back.")
+        cave_path()
+    else:
+        print("Please enter 'fight' or 'run'.")
+        bear_encounter()
+
+def forest_or_mountain():
+    choice = input().lower()
+    if choice == "forest":
+        print("You enter the dense forest.")
+        time.sleep(1)
+        print("After a while, you encounter a river. What do you do? (cross/look for a bridge)")
+        river_choice()
+    elif choice == "mountain":
+        print("You start climbing the mountain.")
+        time.sleep(1)
+        print("At the top, you see a beautiful view. Congratulations, you reached the summit!")
+    else:
+        print("Please enter 'forest' or 'mountain'.")
+        forest_or_mountain()
+
+def river_choice():
+    choice = input().lower()
+    if choice == "cross":
+        print("You attempt to cross the river.")
+        time.sleep(1)
+        print("The current is strong, and you struggle to swim.")
+        time.sleep(1)
+        print("Unfortunately, you are swept away by the river.")
+    elif choice == "look for a bridge":
+        print("You decide to look for a bridge.")
+        time.sleep(1)
+        print("You find a sturdy bridge and safely cross the river.")
+        time.sleep(1)
+        print("Congratulations, you made it to the other side!")
+    else:
+        print("Please enter 'cross' or 'look for a bridge'.")
+        river_choice()
+
+# Main game loop
+introduction()
+choose_path()
